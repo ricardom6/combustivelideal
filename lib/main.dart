@@ -3,6 +3,7 @@ import 'package:combustivelideal/cadastro.dart';
 import 'package:combustivelideal/historico.dart';
 
 void main() => runApp(MaterialApp(
-  home: Historico(),
+  //home: Historico(),
+  home: Cadastro(),
 ));
 
