@@ -53,10 +53,15 @@ class _HistoricoState extends State<Historico> {
            Padding(
              padding: EdgeInsets.only(left: 10),
              child: Column (
+               mainAxisAlignment: MainAxisAlignment.start,
+               crossAxisAlignment: CrossAxisAlignment.start,
                children: <Widget>[
                  Text(
                    lsPosto[index].nome ?? "-",
-                   style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                   style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold,
+
+                   ),
+                   textAlign: TextAlign.start,
                  ),
                  Text(
                    lsPosto[index].pEt ?? "-",
@@ -72,7 +77,7 @@ class _HistoricoState extends State<Historico> {
                  ),
                  Text(
                    lsPosto[index].result ?? "-",
-                   style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
+                   style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold),
                  )
                ],
              ),
