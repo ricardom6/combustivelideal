@@ -61,7 +61,6 @@ class _HistoricoState extends State<Historico> {
                    style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold,
 
                    ),
-                   textAlign: TextAlign.start,
                  ),
                  Text(
                    lsPosto[index].pEt ?? "-",

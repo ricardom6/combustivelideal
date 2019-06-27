@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:combustivelideal/postoFormat.dart';
 import 'package:combustivelideal/helper.dart';
 import 'package:combustivelideal/historico.dart';
+import 'package:date_format/date_format.dart';
 import 'dart:io';
 
 class Cadastro extends StatefulWidget {
@@ -49,12 +50,15 @@ class _CadastroState extends State<Cadastro> {
             //validar, calcular e salvar
             print("primeiro");
             _calcular();
-            helper.insert(_postoTemp);
-            _clearTela();
+
           },
           child: Text("Verificar e salvar"),
           color: Colors.blue,
         ));
+  }
+  void _salvar(){
+    helper.insert(_postoTemp);
+    _clearTela();
   }
   void _clearTela(){
     _postoTemp.id = null;
@@ -123,7 +127,8 @@ class _CadastroState extends State<Cadastro> {
     double pEt = double.parse(_postoTemp.pEt);
     double pGas = double.parse(_postoTemp.pGas); //celsius * 1.8 +32.0;
     double dresult = pEt / pGas;
-    _postoTemp.data = ("Inserir nova data.");
+    _postoTemp.data = formatDate(DateTime.now(), ['Dia ', dd, '/', mm, '/', yyyy, ' as ', HH, ':', nn, 'hs.']);
+    //_postoTemp.data = ("Inserir nova data.");
     if (dresult > 0.7){
       _postoTemp.result = ("È melhor utilizar gasolina.");
     } else {
@@ -131,6 +136,23 @@ class _CadastroState extends State<Cadastro> {
     }
     //fahrenheitController.text = fahrenheit.toStringAsFixed(2);
   print("segundo");
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text("Resultado:"),
+            content: Text(_postoTemp.result),
+            actions: <Widget>[
+              FlatButton(
+                child: Text("Ok"),
+                onPressed: () {
+                  _salvar();
+                  Navigator.pop(context);
+                },
+              )
+            ],
+          );
+        });
 
   }
   @override
