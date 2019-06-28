@@ -3,17 +3,12 @@ import 'package:combustivelideal/postoFormat.dart';
 import 'package:combustivelideal/helper.dart';
 import 'package:combustivelideal/historico.dart';
 import 'package:date_format/date_format.dart';
-import 'dart:io';
 
 class Cadastro extends StatefulWidget {
   @override
-  //final Posto posto = Posto();
-
   Cadastro();
-
   _CadastroState createState() => _CadastroState();
 }
-
 class _CadastroState extends State<Cadastro> {
   Helper helper = Helper();
   final _pEtController = TextEditingController();
@@ -39,8 +34,6 @@ class _CadastroState extends State<Cadastro> {
     ]
     );
   }
-
-  //criar raizedButton para salvar
   Widget buildCtnButton() {
     return Container(
         padding: EdgeInsets.fromLTRB(8, 24, 8, 24),
@@ -65,12 +58,6 @@ class _CadastroState extends State<Cadastro> {
     _nameController.text = ("");
     _pEtController.text = ("");
     _pGasController.text = ("");
-    /*
-              _postoTemp.nome = ("");
-              _postoTemp.pEt = ("");
-              _postoTemp.pGas = ("");
-              _postoTemp.data = ("");
-              _postoTemp.result = ("");*/
   }
   Widget buildScaffold() {
     return Scaffold(
@@ -153,7 +140,6 @@ class _CadastroState extends State<Cadastro> {
             ],
           );
         });
-
   }
   @override
   Widget build(BuildContext context) {

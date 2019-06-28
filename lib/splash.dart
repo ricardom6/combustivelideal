@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:combustivelideal/cadastro.dart';
-//import 'home.dart';
 
 class SplashHome extends StatefulWidget {
   @override
   _SplashHomeState createState() => _SplashHomeState();
 }
-
 class _SplashHomeState extends State<SplashHome> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 5)).then((_) {
       Navigator.of(context)
           .pushReplacement(MaterialPageRoute(builder: (context) => Cadastro()));
-    });
-  }
-
+    });}
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -38,13 +34,11 @@ class _SplashHomeState extends State<SplashHome> {
                   color: Colors.black,
               ),
               ),
-
     ]
     )
         ),
         Padding(
-            padding: EdgeInsets.only(top: 40)
-            ,
+            padding: EdgeInsets.only(top: 40),
             child: Column (
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -54,30 +48,9 @@ class _SplashHomeState extends State<SplashHome> {
                       color: Colors.black,
                     ),
                   ),
-
                 ]
             )
         ),
-
-
     ]);
-
   }
 }
-/* Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.end, // MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Container(
-            width: 800,
-            height: 600,
-            decoration: BoxDecoration(
-                image:
-                DecorationImage(image: AssetImage("images/fundo_m6.jpeg")))
-
-          ),
-          //Text( "TELA DE ABERTURA"),
-        ],
-      ),
-    );*/
